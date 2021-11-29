@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Scribe Server</title>
+  </head>
+  <body>
+    {% extends "template.html" %}
+    {% block content %}
+
+    <form method="POST">
+
+        <p>Settings:</p>    
+        &nbsp;&nbsp;&nbsp;&nbsp;     
+        <label class="container">Add Periods
+            <input type="checkbox" checked="checked" name="period"> 
+        </label>
+        &nbsp;&nbsp;&nbsp;&nbsp; 
+
+        <label class="container">Add Comas
+            <input type="checkbox" checked="checked" name="coma">
+        </label>
+        &nbsp;&nbsp;&nbsp;&nbsp; 
+
+        <label class="container">Tag Periods First
+            <input type="checkbox" checked="checked" name="sentence_first">
+        </label>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+		
+        <label class="container">Keep Original Punctuation
+            <input type="checkbox" checked="checked" name="original">
+        </label>  
+       
+        <p>Enter Raw Text Below </p>    
+
+        <textarea name="text" cols="140" rows="10">{{original}}</textarea>
+        <input type="submit">
+    </form>
+
+    <p>Results:</p>    
+    
+    <textarea name="text" cols="140" rows="10">{{data}}</textarea>
+  
+    {% endblock %}
+
+   
+  </body>
+</html>
